@@ -1,5 +1,6 @@
 import React,{useContext} from 'react';
 import {GlobalContext} from '../context/GlobalState';
+import CountUp from 'react-countup';
 
 export const IncomeExpenses = () => {
     const {transactions}= useContext(GlobalContext);
@@ -17,11 +18,11 @@ export const IncomeExpenses = () => {
         <div className="inc-exp-container">
         <div>
           <h4>Income</h4>
-    <p id="money-plus" className="money plus">+{income}</p>
+    <p id="money-plus" className="money plus">+<CountUp end={income}/></p>
         </div>
         <div>
           <h4>Expense</h4>
-          <p id="money-minus" className="money minus">-{expense}</p>
+          <p id="money-minus" className="money minus">-<CountUp end={expense}/></p>
         </div>
       </div>
     )
