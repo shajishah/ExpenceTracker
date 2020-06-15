@@ -1,15 +1,18 @@
-import React,{useContext} from 'react'
-import {GlobalContext} from '../context/GlobalState';
-import CountUp from 'react-countup';
+import React, { useContext } from "react";
+import { GlobalContext } from "../context/GlobalState";
+import CountUp from "react-countup";
 
 export const Balance = () => {
-    const {transactions}= useContext(GlobalContext);
-    const amounts = transactions.map(transaction => transaction.amount);
-    const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
-    return (
-        <>
-            <h4>Your Balance</h4>
-            <h1> $<CountUp end={total} /> </h1>
-        </>
-    )
-}
+  const { transactions } = useContext(GlobalContext);
+  const amounts = transactions.map((transaction) => transaction.amount);
+  const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
+  return (
+    <>
+      <h4>Your Balance</h4>
+      <h1>
+        {" "}
+        $<CountUp end={total} />{" "}
+      </h1>
+    </>
+  );
+};
