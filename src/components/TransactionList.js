@@ -10,7 +10,7 @@ export const TransactionList = () => {
       <h3>History</h3>
       <motion.ul
         whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 1.3 }}
+        whileTap={{ scale: 0.8 }}
         className="list"
       >
         {transactions.map((transaction) => (
