@@ -54,7 +54,7 @@ export const AddTransaction = () => {
         </div>
         <motion.button
             whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 1.9 }} className="btn">Add transaction</motion.button>
+            whileTap={{ scale: 1.3 }} className="btn">Add transaction</motion.button>
       </form>
     </>
   );
