@@ -1,5 +1,6 @@
 import React, { useState, useContext, useRef } from "react";
 import { GlobalContext } from "../context/GlobalState";
+import { motion } from "framer";
 
 export const AddTransaction = () => {
   const [text, setText] = useState("");
@@ -27,7 +28,8 @@ export const AddTransaction = () => {
       <form onSubmit={submitHandler}>
         <div className="form-control">
           <label htmlFor="text">Transaction Name</label>
-          <input
+          <motion.input
+            whileHover={{ scale: 1.2 }}
             type="text"
             ref={textRef}
             required
@@ -40,7 +42,9 @@ export const AddTransaction = () => {
             Amount <br />
             (negative - expense, positive - income)
           </label>
-          <input
+          <motion.input
+            whileHover={{ scale: 1.2 }}
+            
             type="number"
             ref={amountRef}
             required
@@ -48,7 +52,9 @@ export const AddTransaction = () => {
             placeholder="Enter amount..."
           />
         </div>
-        <button className="btn">Add transaction</button>
+        <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 1.9 }} className="btn">Add transaction</motion.button>
       </form>
     </>
   );
